@@ -27,10 +27,10 @@
             </div>
             <div class="flex items-center justify-end">
                 <div>
-                    <a href="#" class=" text-lg font-sans text-gray-600 hover:text-gray-800">Acceder</a>
+                    <a href="{{ route('login') }}" class=" text-lg font-sans text-gray-600 hover:text-gray-800">Acceder</a>
                 </div>
                 <div>
-                    <a href="#" class=" text-lg font-sans text-gray-600 hover:text-gray-800 ml-4">Registro</a>
+                    <a href="{{ route('register') }}" class=" text-lg font-sans text-gray-600 hover:text-gray-800 ml-4">Registro</a>
                 </div>
             </div>
         </div>
