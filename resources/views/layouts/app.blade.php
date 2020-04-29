@@ -25,14 +25,32 @@
             <div>
                 <a href="#" class="text-2xl font-sans text-gray-600 hover:text-gray-800">Store</a>
             </div>
-            <div class="flex items-center justify-end">
-                <div>
-                    <a href="{{ route('login') }}" class=" text-lg font-sans text-gray-600 hover:text-gray-800">Acceder</a>
+            @guest
+                <div class="flex items-center justify-end">
+                    <div>
+                        <a href="{{ route('login') }}" class=" text-lg font-sans text-gray-600 hover:text-gray-800">Acceder</a>
+                    </div>
+                    <div>
+                        <a href="{{ route('register') }}" class=" text-lg font-sans text-gray-600 hover:text-gray-800 ml-4">Registro</a>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{ route('register') }}" class=" text-lg font-sans text-gray-600 hover:text-gray-800 ml-4">Registro</a>
+                @else
+                <div class="flex items-center justify-end">
+                    <div>
+                        <a href="#" class=" text-lg font-sans text-gray-600 hover:text-gray-800">
+                            {{ Auth::user()->name }}
+                        </a>
+                    </div>
+                    <div>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class=" text-lg font-sans text-gray-600 hover:text-gray-800 ml-4">Cerrar sesión
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
                 </div>
-            </div>
+            @endguest
+
         </div>
     </div>
     <div id="app">
