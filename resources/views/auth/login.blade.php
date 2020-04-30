@@ -21,7 +21,12 @@
                     <input class="mr-2 leading-tight" type="checkbox">
                     <span class="text-sm text-gray-500">Recuerdame</span>
                 </label>
-                <span class="text-sm text-gray-500">Olvidaste tu contraseña? Recuperala <a href="#" class="text-gray-900">aqui</a></span>
+                <span class="text-sm text-gray-500">Olvidaste tu contraseña? Recuperala <a href="{{ route('password.request') }}" class="text-gray-900">aqui</a></span>
+            </div>
+            <div class="flex justify-center">
+                <div class="account">
+                    <span class="text-sm text-gray-500">No tienes cuenta? Crea una gratis <a href="{{ route('register') }}" class="text-gray-900">aqui</a></span>
+                </div>
             </div>
         </form>
     </div>
